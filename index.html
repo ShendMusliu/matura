@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Platforma Testimi - Matura 2023</title>
+  <!-- Importo fontin modern Roboto nga Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #4a90e2;
+      --success-color: #2ecc71;
+      --error-color: #e74c3c;
+      --bg-color: #f0f2f5;
+      --card-bg: #fff;
+      --text-color: #333;
+      --border-radius: 8px;
+      --transition-speed: 0.3s;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #subjectSelect {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: var(--border-radius);
+      background-color: #fff;
+    }
+    .question {
+      background-color: var(--card-bg);
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: var(--border-radius);
+      transition: background-color var(--transition-speed);
+    }
+    .question:hover {
+      background-color: #fafafa;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: var(--border-radius);
+      transition: background-color var(--transition-speed);
+    }
+    .options label:hover {
+      background-color: #f0f0f0;
+    }
+    .correct {
+      border-left: 5px solid var(--success-color);
+      background-color: #eafaf1;
+    }
+    .wrong {
+      border-left: 5px solid var(--error-color);
+      background-color: #fdecea;
+    }
+    .highlight-correct {
+      color: var(--success-color);
+      font-weight: bold;
+    }
+    .highlight-wrong {
+      color: var(--error-color);
+      font-weight: bold;
+    }
+    #submitBtn {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 30px;
+      font-size: 1em;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background-color var(--transition-speed);
+    }
+    #submitBtn:hover {
+      background-color: #3f7ecb;
+    }
+    #result {
+      text-align: center;
+      font-size: 1.2em;
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px solid #ddd;
+      background-color: #fff;
+      border-radius: var(--border-radius);
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+      .question {
+        padding: 15px;
+      }
+      #submitBtn {
+        padding: 10px 20px;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Platforma Testimi - Matura 2023</h1>
+    <h2>Zgjidh Lëndën</h2>
+    <select id="subjectSelect">
+      <option value="all">Të gjitha lëndët</option>
+      <option value="gjuhë">Gjuhë Shqipe dhe Letërsi</option>
+      <option value="fizikë">Fizikë</option>
+      <option value="biologji">Biologji</option>
+      <option value="kimi">Kimi</option>
+      <option value="informatikë">Informatikë</option>
+      <option value="gjeografi">Gjeografi</option>
+    </select>
+
+    <form id="quizForm">
+      <div id="questionsContainer">
+        <!-- PYETJET NGA LËNDA "GJUHË SHQIPE DHE LETËRSI" -->
+        <div class="question" data-subject="gjuhë" id="g1">
+          <p><strong>[Gjuhë Shqipe dhe Letërsi] 1. Çfarë thotë tregimtari për historinë që nis të na e tregojë?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="g1" value="A"> A. Është një histori për të cilën nuk do ta besonte kush.</label>
+            <label><input type="radio" name="g1" value="B"> B. Është një histori e familjes së tij që nuk do të duhej treguar.</label>
+            <label><input type="radio" name="g1" value="C"> C. Është një histori të fshehtë e së cilës do ta zbulojë në prag të vdekjes.</label>
+            <label><input type="radio" name="g1" value="D"> D. Është një histori që nuk e di as vetë pse po e zbulon të tërën.</label>
+          </div>
+        </div>
+
+        <div class="question" data-subject="gjuhë" id="g2">
+          <p><strong>[Gjuhë Shqipe dhe Letërsi] 2. Rrëfyesi përshkruan ngjarjet që ndodhin në:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="g2" value="A"> A. Vendin e tij të punës</label>
+            <label><input type="radio" name="g2" value="B"> B. Shtëpinë e shërbëtores</label>
+            <label><input type="radio" name="g2" value="C"> C. Qendrën rehabilituese</label>
+            <label><input type="radio" name="g2" value="D"> D. Shtëpinë e tij</label>
+          </div>
+        </div>
+
+        <!-- PYETJET NGA LËNDA "FIZIKË" -->
+        <div class="question" data-subject="fizikë" id="f1">
+          <p><strong>[Fizikë] 1. Me cilën nga formulat vijuese llogaritet rruga e lëvizjes drejtvizore me nxitim konstant?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="f1" value="A"> A. (Formula A)</label>
+            <label><input type="radio" name="f1" value="B"> B. (Formula B)</label>
+            <label><input type="radio" name="f1" value="C"> C. (Formula C)</label>
+            <label><input type="radio" name="f1" value="D"> D. (Formula D)</label>
+          </div>
+        </div>
+
+        <div class="question" data-subject="fizikë" id="f2">
+          <p><strong>[Fizikë] 2. Cili nga pohimet është i saktë për ligjin e tretë të Njutonit?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="f2" value="A"> A. Veprimet e dy trupave janë të barabarta dhe me kahe të kundërta</label>
+            <label><input type="radio" name="f2" value="B"> B. Veprimet e dy trupave nuk janë të barabarta dhe me kahe të kundërta</label>
+            <label><input type="radio" name="f2" value="C"> C. Veprimet e dy trupave nuk janë të barabarta dhe me kahe të njëjta</label>
+            <label><input type="radio" name="f2" value="D"> D. Veprimet e dy trupave janë të barabarta dhe me kahe të njëjta</label>
+          </div>
+        </div>
+
+        <!-- PYETJET NGA LËNDA "BIOLOGJI" -->
+        <div class="question" data-subject="biologji" id="b1">
+          <p><strong>[Biologji] 1. Si quhet proteina që merr pjesë në ndërtimin e muskujve?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="b1" value="A"> A. Mielina</label>
+            <label><input type="radio" name="b1" value="B"> B. Miozina</label>
+            <label><input type="radio" name="b1" value="C"> C. Elastina</label>
+            <label><input type="radio" name="b1" value="D"> D. Hemoglobina</label>
+          </div>
+        </div>
+
+        <!-- PYETJET NGA LËNDA "KIMI" -->
+        <div class="question" data-subject="kimi" id="k1">
+          <p><strong>[Kimi] 1. Gjatë djegies së sulfurit formohen dy okside të sulfurit. Në cilin rast kahja e reaksionit kalon në anën e djathtë?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="k1" value="A"> A. Nëse rritet temperatura e reaksionit</label>
+            <label><input type="radio" name="k1" value="B"> B. Nëse rritet shtypja e gazeve</label>
+            <label><input type="radio" name="k1" value="C"> C. Nëse zvogëlohet sasia e oksigjenit</label>
+            <label><input type="radio" name="k1" value="D"> D. Nëse shtohet katalizatori</label>
+          </div>
+        </div>
+
+        <!-- PYETJET NGA LËNDA "INFORMATIKË" -->
+        <!-- Pyetja 76 -->
+        <div class="question" data-subject="informatikë" id="i76">
+          <p><strong>76. Hard Disku ka funksion:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i76" value="A"> A. Ekzekutimin e sistemit operativ</label>
+            <label><input type="radio" name="i76" value="B"> B. Ruajtjen e të dhënave</label>
+            <label><input type="radio" name="i76" value="C"> C. Ndërtimin e sinjalit të monitorit</label>
+            <label><input type="radio" name="i76" value="D"> D. Përpunimin e zërit në kompjuter</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 77 -->
+        <div class="question" data-subject="informatikë" id="i77">
+          <p>
+            <strong>77. Shkolla ka blerë një TV të ri për kabinetin e TIK-ut. Profesori i TIK-ut e lidh laptopin e tij me TV përmes portit:</strong>
+          </p>
+          <img src="./assets/Informatike77.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <div class="options">
+            <label><input type="radio" name="i77" value="A"> A. DVI</label>
+            <label><input type="radio" name="i77" value="B"> B. USB</label>
+            <label><input type="radio" name="i77" value="C"> C. HDMI</label>
+            <label><input type="radio" name="i77" value="D"> D. HIV</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 78 -->
+        <div class="question" data-subject="informatikë" id="i78">
+          <p><strong>78. Cilët nga opsionet e mëposhtme nuk janë Sisteme Operative? (Windows, C++, Excel, Linux)</strong></p>
+          <img src="./assets/Informatike78.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <div class="options">
+            <label><input type="radio" name="i78" value="A"> A. I dhe III</label>
+            <label><input type="radio" name="i78" value="B"> B. II dhe III</label>
+            <label><input type="radio" name="i78" value="C"> C. III dhe IV</label>
+            <label><input type="radio" name="i78" value="D"> D. II, III dhe IV</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 79 -->
+        <div class="question" data-subject="informatikë" id="i79">
+          <p><strong>79. Ndërveprimi dhe arkitektura e Sistemit Operativ mund të paraqitet sikurse:</strong></p>
+          <img src="./assets/Informatike79.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <div class="options">
+            <label><input type="radio" name="i79" value="A"> A. (1)</label>
+            <label><input type="radio" name="i79" value="B"> B. (2)</label>
+            <label><input type="radio" name="i79" value="C"> C. (3)</label>
+            <label><input type="radio" name="i79" value="D"> D. (4)</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 80 -->
+        <div class="question" data-subject="informatikë" id="i80">
+          <p><strong>80. Kompjuteri që shërben si njësi qendrore e rrjetit, ku menaxhon të gjithë kompjuterët tjerë dhe pajisjet e lidhura, quhet:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i80" value="A"> A. Processor</label>
+            <label><input type="radio" name="i80" value="B"> B. Internet</label>
+            <label><input type="radio" name="i80" value="C"> C. Wireless</label>
+            <label><input type="radio" name="i80" value="D"> D. Server</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 81 -->
+        <div class="question" data-subject="informatikë" id="i81">
+          <p><strong>81. Për të siguruar të dhënat nga qasja e paautorizuar, përdorim fjalëkalimin (password). Cili nga fjalëkalimet e listuar është më i sigurt sipas rregullave?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i81" value="A"> A. 00001111</label>
+            <label><input type="radio" name="i81" value="B"> B. Arberi123</label>
+            <label><input type="radio" name="i81" value="C"> C. @rB3R!_00</label>
+            <label><input type="radio" name="i81" value="D"> D. 123Arb3r1</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 82 -->
+        <div class="question" data-subject="informatikë" id="i82">
+          <p><strong>82. Në cilin grup të funksioneve bën pjesë funksioni IF në Excel?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i82" value="A"> A. Statistikore</label>
+            <label><input type="radio" name="i82" value="B"> B. Logjike</label>
+            <label><input type="radio" name="i82" value="C"> C. Matematikore</label>
+            <label><input type="radio" name="i82" value="D"> D. Tekstuale</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 83 -->
+        <div class="question" data-subject="informatikë" id="i83">
+          <p><strong>83. Nëse qeliza A5 përmban një funksion që rezultati është 25, cili nga funksionet në Excel është zbatuar?</strong></p>
+          <img src="./assets/Informatike83.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <div class="options">
+            <label><input type="radio" name="i83" value="A"> A. =COUNT(A1:A4)</label>
+            <label><input type="radio" name="i83" value="B"> B. =SUM(A1:A4)</label>
+            <label><input type="radio" name="i83" value="C"> C. =MIN(A1:A4)</label>
+            <label><input type="radio" name="i83" value="D"> D. =AVERAGE(A1:A4)</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 84 -->
+        <div class="question" data-subject="informatikë" id="i84">
+          <p><strong>84. Funksioni që shfaq numrin e karaktereve në qelizën A1 në Excel është:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i84" value="A"> A. =LEN(A1)</label>
+            <label><input type="radio" name="i84" value="B"> B. =COUNT(A1)</label>
+            <label><input type="radio" name="i84" value="C"> C. =SUM(A1)</label>
+            <label><input type="radio" name="i84" value="D"> D. =AVERAGE(A1)</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 85 -->
+        <div class="question" data-subject="informatikë" id="i85">
+          <p><strong>85. Në Excel, cilat formate përdoren për qelizat C2 deri në C6, që shënimi “kg” të paraqitet automatikisht?</strong></p>
+          <img src="./assets/Informatike85.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <div class="options">
+            <label><input type="radio" name="i85" value="A"> A. Currency</label>
+            <label><input type="radio" name="i85" value="B"> B. Accounting</label>
+            <label><input type="radio" name="i85" value="C"> C. Custom</label>
+            <label><input type="radio" name="i85" value="D"> D. Time</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 86 -->
+        <div class="question" data-subject="informatikë" id="i86">
+          <p><strong>86. Pas ekzekutimit të funksionit =AND(2*3=6, 6/2=2) në Excel, rezultati është:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i86" value="A"> A. TRUE</label>
+            <label><input type="radio" name="i86" value="B"> B. 2</label>
+            <label><input type="radio" name="i86" value="C"> C. 3</label>
+            <label><input type="radio" name="i86" value="D"> D. FALSE</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 87 -->
+        <div class="question" data-subject="informatikë" id="i87">
+          <p><strong>87. Pas ekzekutimit të funksionit =RIGHT("Gjuhë Angleze", 7) në Excel, rezultati është:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i87" value="A"> A. Gjuhë Angleze</label>
+            <label><input type="radio" name="i87" value="B"> B. Gjuhë</label>
+            <label><input type="radio" name="i87" value="C"> C. Angleze</label>
+            <label><input type="radio" name="i87" value="D"> D. Gj. Angleze</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 88 -->
+        <div class="question" data-subject="informatikë" id="i88">
+          <p><strong>88. Sipas të dhënave të një tabele, Artani pas ekzekutimit të funksionit =SUMIF(A1:D2, "&lt;0") në Excel, rezultati është:</strong></p>
+          <img src="./assets/Informatike88.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <div class="options">
+            <label><input type="radio" name="i88" value="A"> A. -6</label>
+            <label><input type="radio" name="i88" value="B"> B. 0</label>
+            <label><input type="radio" name="i88" value="C"> C. 12</label>
+            <label><input type="radio" name="i88" value="D"> D. 18</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 89 -->
+        <div class="question" data-subject="informatikë" id="i89">
+          <p><strong>89. Cila nga opsionet është shembulli më i mirë për menaxhimin elektronik të të dhënave të pacientëve, stafit të mjekëve dhe shërbimeve të një qendre spitalore?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i89" value="A"> A. Një program për prezantim (PowerPoint)</label>
+            <label><input type="radio" name="i89" value="B"> B. Një bazë e të dhënave (Access)</label>
+            <label><input type="radio" name="i89" value="C"> C. Një program për shkrim (Word)</label>
+            <label><input type="radio" name="i89" value="D"> D. Një program për vizatim (Paint)</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 90 -->
+        <div class="question" data-subject="informatikë" id="i90">
+          <p><strong>90. Çfarë lidhje relacionale duhet krijuar mes tabelave "Produkti" dhe "Porosia"?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i90" value="A"> A. Një-me-një</label>
+            <label><input type="radio" name="i90" value="B"> B. Një-me-shumë</label>
+            <label><input type="radio" name="i90" value="C"> C. Pak-me-shumë</label>
+            <label><input type="radio" name="i90" value="D"> D. Shumë-me-shumë</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 91 -->
+        <div class="question" data-subject="informatikë" id="i91">
+          <p><strong>91. Gjatë punës në pyetësin e krijuar me të dhënat nga tabela Librat, është përdorur kriteri në fushën si në figurë. Cili
+            është roli i shenjës së yllit (*) në kriterin e fushës Titulli në bazën e të dhënave në Access?</strong></p>
+          <img src="./assets/Informatike91.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <div class="options">
+            <label><input type="radio" name="i91" value="A"> A. Paraqiten titujt e librave që nuk kanë shkronjën A</label>
+            <label><input type="radio" name="i91" value="B"> B. Zëvendëson të gjitha shkronjat që vijnë para shkronjës A</label>
+            <label><input type="radio" name="i91" value="C"> C. Zëvendëson të gjitha shkronjat që vijnë pas shkronjës A</label>
+            <label><input type="radio" name="i91" value="D"> D. Paraqiten titujt e librave, ku emri i autorit fillon me shkronjën A</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 92 -->
+        <div class="question" data-subject="informatikë" id="i92">
+          <p><strong>92. Një punëtore dëshiron të shfaqë të gjitha produktet nga tabela "Produkti" që kanë çmimin mes 50 dhe 150 euro. Cili është kriteri i duhur në Access?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i92" value="A"> A. [Çmimi] &gt;= 50 AND [Çmimi] &lt;= 150</label>
+            <label><input type="radio" name="i92" value="B"> B. [Çmimi] &lt;= 50 AND [Çmimi] &gt;= 150</label>
+            <label><input type="radio" name="i92" value="C"> C. [Çmimi] &lt;= 50 OR [Çmimi] &gt;= 150</label>
+            <label><input type="radio" name="i92" value="D"> D. [Çmimi] &gt;= 50 NOT [Çmimi] &lt;= 150</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 93 -->
+        <div class="question" data-subject="informatikë" id="i93">
+          <p><strong>93. Në një formular në Access, cilin funksion ka butoni i shfaqur?</strong></p>
+          <img src="./assets/Informatike93.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <div class="options">
+            <label><input type="radio" name="i93" value="A"> A. Kalimi në rekordin e fundit</label>
+            <label><input type="radio" name="i93" value="B"> B. Fshirja e rekordit paraprak</label>
+            <label><input type="radio" name="i93" value="C"> C. Kalimi në rekordin e radhës</label>
+            <label><input type="radio" name="i93" value="D"> D. Kalimi në rekordin e parë</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 94 -->
+        <div class="question" data-subject="informatikë" id="i94">
+          <p><strong>94. Cili është një problem i mundshëm në PowerPoint kur përdoren shumë efekte animacioni në sllajde?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i94" value="A"> A. Prezantimi mund të bëhet më me interes</label>
+            <label><input type="radio" name="i94" value="B"> B. Prezantimi mund të shkaktojë mërzi</label>
+            <label><input type="radio" name="i94" value="C"> C. Prezantimi mund të shkaktojë probleme teknike</label>
+            <label><input type="radio" name="i94" value="D"> D. Prezantimi mund të bëhet më argëtues</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 95 -->
+        <div class="question" data-subject="informatikë" id="i95">
+          <p><strong>95. Nëse një prezantim në PowerPoint ruhet në OneDrive me butonin “Save As”, çfarë përfitimi ka?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i95" value="A"> A. Prezantimi është në cloud dhe mund të shpërndahet</label>
+            <label><input type="radio" name="i95" value="B"> B. Prezantimi ruhet me emrin OneDrive</label>
+            <label><input type="radio" name="i95" value="C"> C. Prezantimi është më profesional</label>
+            <label><input type="radio" name="i95" value="D"> D. Prezantimi është më i thjeshtë</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 96 -->
+        <div class="question" data-subject="informatikë" id="i96">
+          <p><strong>96. Kur shtohen disa fotografi në një sllajd në PowerPoint dhe ato nuk kanë largësi të njëjtë, cilat komandë përdoren për të rregulluar distancën e barabartë?</strong></p>
+          <img src="./assets/Informatike96.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <div class="options">
+            <label><input type="radio" name="i96" value="A"> A. Align Middle</label>
+            <label><input type="radio" name="i96" value="B"> B. Align Center</label>
+            <label><input type="radio" name="i96" value="C"> C. Distribute Horizontally</label>
+            <label><input type="radio" name="i96" value="D"> D. Distribute Vertically</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 97 -->
+        <div class="question" data-subject="informatikë" id="i97">
+          <p><strong>97. Çfarë është një Animation Path në PowerPoint?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i97" value="A"> A. Ndryshon madhësinë e një objekti që lëviz</label>
+            <label><input type="radio" name="i97" value="B"> B. Një rrugë që tregon lëvizjen e elementeve</label>
+            <label><input type="radio" name="i97" value="C"> C. Ndryshon ngjyrat e elementeve</label>
+            <label><input type="radio" name="i97" value="D"> D. Ndryshon formatin e prezantimit</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 98 -->
+        <div class="question" data-subject="informatikë" id="i98">
+          <p><strong>98. Formati i saktë për një e-mail adresë është:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i98" value="A"> A. emrimbiemri.outlook.com</label>
+            <label><input type="radio" name="i98" value="B"> B. emrimbiemri@outlook@com</label>
+            <label><input type="radio" name="i98" value="C"> C. emrimbiemri-outlook.com</label>
+            <label><input type="radio" name="i98" value="D"> D. emrimbiemri@outlook.com</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 99 -->
+        <div class="question" data-subject="informatikë" id="i99">
+          <p><strong>99. Një nxënës që shfleton në internet përdor një ueb shfletues. Cili nga programet e mëposhtme është një ueb shfletues?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i99" value="A"> A. Word</label>
+            <label><input type="radio" name="i99" value="B"> B. Google Chrome</label>
+            <label><input type="radio" name="i99" value="C"> C. Excel</label>
+            <label><input type="radio" name="i99" value="D"> D. PowerPoint</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 100 -->
+        <div class="question" data-subject="informatikë" id="i100">
+          <p><strong>100. Kur flitet për cilësinë e imazhit të krijuar me softuerët e vizatimit në Windows (si Paint), cila pohim është e saktë?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="i100" value="A"> A. Imazhi humb kualitetin kur zmadhohet</label>
+            <label><input type="radio" name="i100" value="B"> B. Imazhi nuk humb kualitetin kur zmadhohet</label>
+            <label><input type="radio" name="i100" value="C"> C. Imazhi ndërtohet nga vija dhe forma gjeometrike</label>
+            <label><input type="radio" name="i100" value="D"> D. Imazhi ndërtohet duke u bazuar në vektorë</label>
+          </div>
+        </div>
+
+        <!-- PYETJET NGA LËNDA "GJEOGRAFI" -->
+        <div class="question" data-subject="gjeografi" id="gj1">
+          <p><strong>[Gjeografi] 1. Në cilën pikë është shpejtësia më e vogël e lëvizjes gjatë rotacionit të Tokës?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="gj1" value="A"> A. Ekuatori</label>
+            <label><input type="radio" name="gj1" value="B"> B. Rrethin tropik</label>
+            <label><input type="radio" name="gj1" value="C"> C. Rrethin polar</label>
+            <label><input type="radio" name="gj1" value="D"> D. Në pole</label>
+          </div>
+        </div>
+
+        <!-- Shtoni këtu të gjitha pyetjet nga dokumenti sipas strukturës së mësipërme -->
+      </div>
+
+      <button type="button" id="submitBtn">Dërgo Testin</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+  
+  <script>
+    // Filtrimi i pyetjeve sipas lëndës së zgjedhur
+    document.getElementById('subjectSelect').addEventListener('change', function() {
+      const selectedSubject = this.value;
+      const questions = document.querySelectorAll('.question');
+      questions.forEach(q => {
+        if (selectedSubject === 'all' || q.getAttribute('data-subject') === selectedSubject) {
+          q.style.display = 'block';
+        } else {
+          q.style.display = 'none';
+        }
+      });
+    });
+    
+    // Objekt me përgjigjet e sakta sipas ID-ve të pyetjeve
+    const answers = {
+      g1: "A",
+      g2: "D",
+      f1: "C",
+      f2: "D",
+      b1: "B",
+      k1: "D",
+      i76: "B",
+      i77: "C",
+      i78: "B",
+      i79: "C",
+      i80: "D",
+      i81: "C",
+      i82: "B",
+      i83: "B",
+      i84: "A",
+      i85: "C",
+      i86: "D",
+      i87: "C",
+      i88: "A",
+      i89: "B",
+      i90: "D",
+      i91: "D",
+      i92: "A",
+      i93: "C",
+      i94: "C",
+      i95: "A",
+      i96: "C",
+      i97: "B",
+      i98: "D",
+      i99: "B",
+      i100: "A",
+      gj1: "D"
+      // Shtoni këtu përgjigjet për të gjitha pyetjet nga dokumenti.
+    };
+    
+    document.getElementById('submitBtn').addEventListener('click', function() {
+      let total = 0;
+      let correctCount = 0;
+      const questionEls = document.querySelectorAll('.question');
+      
+      questionEls.forEach(question => {
+        if (question.style.display === 'none') return;
+        total++;
+        const qId = question.id;
+        const selected = question.querySelector('input[name="'+qId+'"]:checked');
+        if (!selected) return;
+        const correctAnswer = answers[qId];
+        if (selected.value === correctAnswer) {
+          correctCount++;
+          question.classList.add('correct');
+        } else {
+          question.classList.add('wrong');
+          const correctOption = question.querySelector('input[value="'+correctAnswer+'"]');
+          if (correctOption) {
+            const correctLabel = correctOption.parentElement;
+            correctLabel.innerHTML = correctLabel.innerHTML.replace(correctAnswer + '.', '<span class="highlight-correct">' + correctAnswer + '.</span>');
+          }
+          const wrongLabel = selected.parentElement;
+          wrongLabel.innerHTML = wrongLabel.innerHTML.replace(selected.value + '.', '<span class="highlight-wrong">' + selected.value + '.</span>');
+        }
+        const inputs = question.querySelectorAll('input[type="radio"]');
+        inputs.forEach(input => input.disabled = true);
+      });
+      
+      const resultEl = document.getElementById('result');
+      resultEl.style.display = 'block';
+      resultEl.innerHTML = `Rezultati: ${correctCount} nga ${total} pyetje të sakta.`;
+      if (correctCount === total) {
+        resultEl.innerHTML += ' Urime, ju keni përgjigjur saktë të gjitha pyetjeve!';
+      } else if (correctCount / total >= 0.5) {
+        resultEl.innerHTML += ' Keni kaluar testin.';
+      } else {
+        resultEl.innerHTML += ' Duhet të provoni përsëri për një rezultat më të mirë.';
+      }
+    });
+  </script>
+  <footer style="background-color: #f0f2f5; color: #333; text-align: center; padding: 20px 0; font-size: 0.9em;">
+    <div class="footer-content">
+      <p>E ndërtuar nga <strong>Class of 2025</strong></p> <a href="https://kla.education/" target="_blank" style="color: #111; text-decoration: underline;"><strong>Kosovo Leadership Academy</strong></a></p>
+      <p>Testet janë burim nga <a href="https://masht.rks-gov.net/testet-matura-2023/" target="_blank" style="color: #111; text-decoration: underline;"><strong>MASHT</strong></a></p>
+      <p>Kjo faqe është ndërtuar me qëllim që t’ju ndihmojë maturanteve të përgatiten për testin e matures.</p>
+    </div>
+  </footer>
+</body>
+</html>
