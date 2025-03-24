@@ -128,9 +128,9 @@
 <body>
   <div class="container">
     <h1>Platforma Testimi - Matura 2023</h1>
-    <h2>Zgjidh Lëndën</h2>
+    <h2>Lënda</h2>
     <select id="subjectSelect">
-      <option value="all">Të gjitha lëndët</option>
+      <option value="0" disabled selected hidden>Zgjedhë lëndën</option>
       <option value="shqip">Gjuhë Shqipe dhe Letërsi</option>
       <option value="fizikë">Fizikë</option>
       <option value="biologji">Biologji</option>
@@ -142,7 +142,7 @@
     <form id="quizForm">
       <div id="questionsContainer">
         <!-- PYETJET NGA LËNDA "GJUHË SHQIPE DHE LETËRSI" -->
-        <div class="question" data-subject="gjuhë">
+        <div class="question" data-subject="shqip">
         <p><strong>Lexo tekstin e dhënë më poshtë dhe përgjigju pyetjeve në vijim</strong>
           <br>Për këtë rrëfim tepër të frikshëm, por edhe po kaq të rëndomtë që po hedh në letër, nuk pres, dhe as i lutem njeriu të më
           besojë. Dhe, ç'është e vërteta, do të isha i marrë, po ta shpresoja një gjë të tillë, mbasi edhe logjika më e thjeshtë nuk e
@@ -184,23 +184,323 @@
           <strong><br>Edgar Allan Poe, <i>"Macja e zezë"</i></strong>
         </p>
         </div>
-        <div class="question" data-subject="gjuhë" id="g1">
-          <p><strong>1. Çfarë thotë tregimtari për historinë që nis të na e tregojë?</strong></p>
+        <div class="question" data-subject="shqip" id="sh1">
+          <p><strong>1. Çfarë thotë tregimtari për historinë të cilën nis të na e tregojë që në fillim të këtij rrëfimi?</strong></p>
           <div class="options">
-            <label><input type="radio" name="g1" value="A"> A. Është një histori për të cilën nuk do ta besonte kush.</label>
-            <label><input type="radio" name="g1" value="B"> B. Është një histori e familjes së tij që nuk do të duhej treguar.</label>
-            <label><input type="radio" name="g1" value="C"> C. Është një histori të fshehtë e së cilës do ta zbulojë në prag të vdekjes.</label>
-            <label><input type="radio" name="g1" value="D"> D. Është një histori që nuk e di as vetë pse po e zbulon të tërën.</label>
+            <label><input type="radio" name="sh1" value="A"> A. Është një histori për të cilën nuk do ta besonte kush.</label>
+            <label><input type="radio" name="sh1" value="B"> B. Është një histori e familjes së tij që nuk do të duhej treguar.</label>
+            <label><input type="radio" name="sh1" value="C"> C. Është një histori të fshehtë e së cilës do ta zbulojë në prag të vdekjes.</label>
+            <label><input type="radio" name="sh1" value="D"> D. Është një histori që nuk e di as vetë pse po e zbulon të tërën.</label>
           </div>
         </div>
-
-        <div class="question" data-subject="gjuhë" id="g2">
-          <p><strong>2. Rrëfyesi përshkruan ngjarjet që ndodhin në:</strong></p>
+        
+        <div class="question" data-subject="shqip" id="sh2">
+          <p><strong>2. Rrëfyesi në këtë tregim përshkruan ngjarje të jetës së tij qëkurse:</strong></p>
           <div class="options">
-            <label><input type="radio" name="g2" value="A"> A. Vendin e tij të punës</label>
-            <label><input type="radio" name="g2" value="B"> B. Shtëpinë e shërbëtores</label>
-            <label><input type="radio" name="g2" value="C"> C. Qendrën rehabilituese</label>
-            <label><input type="radio" name="g2" value="D"> D. Shtëpinë e tij</label>
+            <label><input type="radio" name="sh2" value="A"> A. mbyti macen e deri në fund të jetës.</label>
+            <label><input type="radio" name="sh2" value="B"> B. ishte fëmijë e deri në moshën e pjekurisë.</label>
+            <label><input type="radio" name="sh2" value="C"> C. u shkurorëzuar e deri kur u plak.</label>
+            <label><input type="radio" name="sh2" value="D"> D. ishte fejuar e deri në kohën kur u martua.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh3">
+          <p><strong>3. Rrëfyesi përshkruan ngjarjet që ndodhin në:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh3" value="A"> A. vendin e tij të punës.</label>
+            <label><input type="radio" name="sh3" value="B"> B. shtëpinë e shërbëtores.</label>
+            <label><input type="radio" name="sh3" value="C"> C. qendrën rehabilituese.</label>
+            <label><input type="radio" name="sh3" value="D"> D. shtëpinë e tij.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh4">
+          <p><strong>4. Çfarë qëndrimi kishte protagonisti i këtij tregimi në fazën e fëmijërisë?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh4" value="A"> A. Të ftohtë e mospërfillës.</label>
+            <label><input type="radio" name="sh4" value="B"> B. Të ashpër e të pamëshirshëm.</label>
+            <label><input type="radio" name="sh4" value="C"> C. Të sjellshëm e të kujdesshëm.</label>
+            <label><input type="radio" name="sh4" value="D"> D. Të druajtur e të paguximshëm.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh5">
+          <p><strong>5. Çfarë pëlqente në fëmijërinë e tij protagonisti i kësaj historie?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh5" value="A"> A. Lulet.</label>
+            <label><input type="radio" name="sh5" value="B"> B. Kafshët.</label>
+            <label><input type="radio" name="sh5" value="C"> C. Kanionet.</label>
+            <label><input type="radio" name="sh5" value="D"> D. Shpellat.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh6">
+          <p><strong>6. Protagonisti i këtij tregimi tregon se në moshën që po e jetonte, po vuante për shkak të:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh6" value="A"> A. përdorimit të alkoolit.</label>
+            <label><input type="radio" name="sh6" value="B"> B. ikjes nga vendlindja.</label>
+            <label><input type="radio" name="sh6" value="C"> C. nëmës së gruas.</label>
+            <label><input type="radio" name="sh6" value="D"> D. përdorimit të ilaçeve.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh7">
+          <p><strong>7. Mënyra se si veproi në fund me macen, protagonisti i kësaj historie, ishte sjellje:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh7" value="A"> A. provokuese.</label>
+            <label><input type="radio" name="sh7" value="B"> B. normale.</label>
+            <label><input type="radio" name="sh7" value="C"> C. hakmarrëse.</label>
+            <label><input type="radio" name="sh7" value="D"> D. tronditëse.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh8">
+          <p><strong>8. Në fjalinë: “E, më pas, si ndryshim i mbramë dhe i pakthyeshëm, depërtoi brenda meje shpirti i perversitetit, që u bë pjesë e qenies sime”, fjala <i>“perversitet”</i> e ka kuptimin:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh8" value="A"> A. revoltim.</label>
+            <label><input type="radio" name="sh8" value="B"> B. ofendim.</label>
+            <label><input type="radio" name="sh8" value="C"> C. çoroditje.</label>
+            <label><input type="radio" name="sh8" value="D"> D. shqetësim.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh9">
+          <p><strong>9. Çfarë përfundimi mund të nxjerrim pas leximit të këtij tregimi?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh9" value="A"> A. Tregimi zbulon psikikën njerëzore të njeriut dhe marrëdhënien e tij me të kaluarën.</label>
+            <label><input type="radio" name="sh9" value="B"> B. Tregimi zbërthen ndjeshmërinë e njeriut, pas të cilës ka ikur varësia nga droga.</label>
+            <label><input type="radio" name="sh9" value="C"> C. Tregimi paraqet të fshehtat e botës së njeriut, i zhgënjyer nga miqtë e tij.</label>
+            <label><input type="radio" name="sh9" value="D"> D. Tregimi shpreh lidhjen e njeriut me religjionin, pas pendimit për të kaluarën e tij.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh10">
+          <p><strong>10. Në cilën fjali, tregimtari e përmend veten si një person, temperamenti dhe karakteri i të cilit pësoi një ndryshim rrënjësor për të keq?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh10" value="A"> A. Një ditë do të vdes, prandaj dhe sot dua ta heq këtë peshë nga shpirti im.</label>
+            <label><input type="radio" name="sh10" value="B"> B. Ato ngjarje më kanë tmerruar, më kanë torturuar, më kanë shkatërruar.</label>
+            <label><input type="radio" name="sh10" value="C"> C. U bëra gjaknxehtë, kisha më pak kujdes ndaj ndjenjave të të tjerëve.</label>
+            <label><input type="radio" name="sh10" value="D"> D. Gruaja e vuri re shpejt dobësinë time për kafshët shtëpiake.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh11">
+          <p><strong>11. Çfarë është e çuditshme dhe e pabesueshme për ne kur dëgjojmë rrëfimin e këtij tregimtari?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh11" value="A"> A. Si është e mundur që pas gjithë atyre sjelljeve dhe veprimeve, nuk ka asnjë dëshmitar që e denoncon edhe asnjë akuzë për ndjekje ligjore.</label>
+            <label><input type="radio" name="sh11" value="B"> B. Si vazhdon tregimtari të paraqesë arsyetime të shumta për sjelljen e tij, duke mos marrë asnjëherë përgjegjësi për atë që po bën.</label>
+            <label><input type="radio" name="sh11" value="C"> C. Si mund ta ndalë veten tregimtari të pijë alkool, kur e di se çfarë veprimesh të tmerrshme agresive bën, pa pasur asnjë shkas për këtë.</label>
+            <label><input type="radio" name="sh11" value="D"> D. Si mund të ruajë tregimtari, në këtë rrethanë kaq emocionale, qetësinë shpirtërore për të treguar një histori kaq të tmerrshme në një mënyrë kaq të kontrolluar.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip">
+          <p><strong>Lexo tekstin e dhënë më poshtë dhe përgjigju pyetjeve në vijim</strong>
+            <br>Edhe një aksident i rëndë në komunikacion në rrugën Prishtinë-Podujevë
+            <br>Një grua vdiq në aksidentin në magjistralen Prishtinë-Podujevë
+            <br><i>31 shtator 2018.</i> - Një grua e moshës rreth 30 vjeçe ka vdekur sot si pasojë e një aksidenti të rëndë në trafik, të shkaktuar
+            nga shpejtësia e madhe e automjeteve, që ndodhi rreth orës 13:30 në magjistralen Prishtinë-Podujevë. Rastin e ka
+            konfirmuar zëdhënësja e Policisë në rajonin e Prishtinës.
+            <br>"Rreth orës 13:30 e kemi pranuar informatën për një aksident trafiku në magjistralen Prishtinë-Podujevë, ku kanë qenë të
+            përfshira tri automjete. Në këtë aksident lëndime trupore kanë pësuar tetë persona. Njëri nga të lënduarit (femër) nuk ka
+            arritur të përballojë plagët e shkaktuara dhe e njëjta ka ndërruar jetë, ndërkohë që personat e tjerë të lënduar janë dërguar
+            për tretman mjekësor", tha zëdhënësja e Policisë së rajonit të Prishtinës.
+            <br>Pamjet e kamerave në vend të ngjarjes tregojnë momentin e frikshëm, kur njëra veturë devijoi nga krahu i djathtë dhe
+            qëlloi veturën që po lëvizte në krahun e majtë. Dëshmitarët në vendin e ngjarjes thanë se dëgjuan një zhurmë të fortë të
+            shkaktuar nga ndeshja e dy veturave. Ata thanë se ishin të tmerruar nga lëndimet e rënda që kishin pësuar udhëtarët.
+          </p>
+        </div>
+
+        <div class="question" data-subject="shqip" id="sh12">
+          <p><strong>12. Cili është lajmi kryesor në këtë tekst?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh12" value="A"> A. Një grua vdiq në një aksident trafiku.</label>
+            <label><input type="radio" name="sh12" value="B"> B. Disa automjete u përfshinë në një aksident trafiku.</label>
+            <label><input type="radio" name="sh12" value="C"> C. Një aksident i ndodhur në një magjistrale.</label>
+            <label><input type="radio" name="sh12" value="D"> D. Shpejtësia e madhe e automjeteve në rrugë.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh13">
+          <p><strong>13. Në pjesën themelore të lajmit përfshihen fakte, detaje dhe citime. Në cilën nga këto fjali është përdorur citati?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh13" value="A"> A. Dëshmitarët në vendin e ngjarjes thanë se dëgjuan një zhurmë të fortë të shkaktuar nga ndeshja e dy veturave.</label>
+            <label><input type="radio" name="sh13" value="B"> B. Një grua e moshës rreth tridhjetë vjeçe ka vdekur sot si pasojë e një aksidenti të rëndë në trafik.</label>
+            <label><input type="radio" name="sh13" value="C"> C. Pamjet e kamerave në vend të ngjarjes tregojnë momentin e frikshëm kur njëra veturë devijoi rrugën.</label>
+            <label><input type="radio" name="sh13" value="D"> D. Rreth orës 13:30 e kemi pranuar informatën për një aksident trafiku në magjistralen Prishtinë-Podujevë.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh14">
+          <p><strong>14. Fjalia: “Edhe një aksident i rëndë në komunikacion në rrugën Prishtinë-Podujevë”, në këtë pjesë të lajmit është dhënë si:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh14" value="A"> A. Nëntitull.</label>
+            <label><input type="radio" name="sh14" value="B"> B. Mbititull.</label>
+            <label><input type="radio" name="sh14" value="C"> C. Koment.</label>
+            <label><input type="radio" name="sh14" value="D"> D. Titull.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh15">
+          <p><strong>15. Në fjalinë: “Në këtë aksident lëndime trupore kanë pësuar tetë persona”, fjala “pësuar” është:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh15" value="A"> A. paskajorja e foljes.</label>
+            <label><input type="radio" name="sh15" value="B"> B. folje modale.</label>
+            <label><input type="radio" name="sh15" value="C"> C. pjesore e foljes.</label>
+            <label><input type="radio" name="sh15" value="D"> D. folje gjysmëndihmëse.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh16">
+          <p><strong>16. Fjalia “Pamjet e kamerave në vend të ngjarjes tregojnë momentin e frikshëm, kur njëra veturë devijoi nga krahu i djathtë” është fjali me marrëdhënie:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh16" value="A"> A. shkakore.</label>
+            <label><input type="radio" name="sh16" value="B"> B. kohore.</label>
+            <label><input type="radio" name="sh16" value="C"> C. qëllimore.</label>
+            <label><input type="radio" name="sh16" value="D"> D. shtuese.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip">
+          <p><strong>Lexo tekstin e dhënë më poshtë dhe përgjigju pyetjeve në vijim</strong>
+            <br>Veprat e tij letrare shtrihen në shumë trajta, forma e gjini letrare. Ai që nga fundi i viteve njëzet nisi të shkruajë kritikë
+            letrare sistematike në rubrikën Shënime letrare. Ai krijoi edhe një formë të veçantë të eseut që lidhet me interpretimin e
+            veprave personale si te Sulm e lotë, e po ashtu për format paraletrare, duke analizuar tekstet e gurëve të varreve te Në
+            Prizren, midis të vdekurve e të gjallëve. Po, rëndësia e veprës së tij, në rrjetën e vlerave të letërsisë shqipe, lidhet me
+            tregimet e novelat, me të cilat ai hap një kapitull të veçantë të prozës shqipe, madje një stil të veçantë të krijimit në prozë
+            që do të ndiqet më vonë nga autorë të tjerë. Vepra e tij ishte e ndaluar apo gjysmë e ndaluar dhe su botua e plotë deri në
+            vitin nëntëdhjetë. Pra, ky është fati i shkrimtarit që nuk iu përshtat sistemit, por edhe sistemi nuk e duroi atë si njeri të
+            fjalës së lirë.
+            <br><strong><i>Sabri Hamiti, Studime letrare</i></strong>
+          </p>
+        </div>
+
+        <div class="question" data-subject="shqip" id="sh17">
+          <p><strong>17. Për cilin autor flitet, bazuar në të dhënat e tekstit më lart?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh17" value="A"> A. Për autorin, vepra e të cilit është lexuar dhe është përkthyer.</label>
+            <label><input type="radio" name="sh17" value="B"> B. Për autorin e dënuar me burg për shkak të veprës.</label>
+            <label><input type="radio" name="sh17" value="C"> C. Për autorin të cilit iu lejua të jetonte vetëm në qytet.</label>
+            <label><input type="radio" name="sh17" value="D"> D. Për autorin vepra e të cilit ishte e censuruar.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh18">
+          <p><strong>18. Cili është autori për të cilin flitet në tekstin më lart?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh18" value="A"> A. Mitrush Kutelin.</label>
+            <label><input type="radio" name="sh18" value="B"> B. Martin Camajn.</label>
+            <label><input type="radio" name="sh18" value="C"> C. Faik Konicën.</label>
+            <label><input type="radio" name="sh18" value="D"> D. Ernest Koliqin.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh19">
+          <p><strong>19. Sipas vlerësimeve të kritikut letrar, autori shquhet për gjininë letrare të:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh19" value="A"> A. dramës.</label>
+            <label><input type="radio" name="sh19" value="B"> B. kritikës.</label>
+            <label><input type="radio" name="sh19" value="C"> C. prozës.</label>
+            <label><input type="radio" name="sh19" value="D"> D. poezisë.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip">
+          <p><strong>Lexo poezinë e dhënë më poshtë dhe përgjigju pyetjeve në vijim</strong>
+            <br>LAHUTA E VJETËR
+            <br>
+            <br>Lahuta pushon në trá
+            <br>pse mixha ka vdekë ka mot
+            <br>e nipat s dijnë me i rá.
+            <br>Lahuta pushon në tym
+            <br>e dorca e saj e thyeme
+            <br>si gishtat e mixhës në vorr.
+            <br>Por kumti i lahutës i trashë, burrnuer.
+            <br>duket se ndihet ke votra përsëri
+            <br>me kangën e vjetër që tret noxhak:
+            <br>Treqind çika nën shatorr in kânë.
+            <br>Njaj mâ tmirës djali syt sia dán!
+            <br>Lahuta flet, mandej vajton
+            <br>me dridhjet e zanit të mixhës
+            <br>si qyqja npranverën e parë,
+            <br>tash gjarpni gdhendun në të leviz
+            <br>dhe trimat mbi gjoka me shpata thjekna
+            <br>fluturojn n për zhark...
+            <br>
+            <br>Lahuta pushon në trá
+            <br>e gishtat e mixhës në dhé.
+            <br>por nshpirtin e nipave ka mbetë
+            <br>nji tingull për kangën e ré.
+            <br>
+            <br><strong><i>Sabri Hamiti, Studime letrare</i></strong>
+          </p>
+        </div>
+
+        <div class="question" data-subject="shqip" id="sh20">
+          <p><strong>20. Cili është simboli në poezinë në të cilën autori shpreh se traditat jetësore të ruajtura mes malesh po shuhen?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh20" value="A"> A. Votra.</label>
+            <label><input type="radio" name="sh20" value="B"> B. Lahuta.</label>
+            <label><input type="radio" name="sh20" value="C"> C. Gjarpni.</label>
+            <label><input type="radio" name="sh20" value="D"> D. Nipat.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh21">
+          <p><strong>21. Në cilin nga vargjet autori e shpreh fuqinë e këngës së lahutarit, duke kënduar rapsodi të këngëve të kreshnikëve?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh21" value="A"> A. Lahuta pushon në tym/e dorca e saj e thyeme.</label>
+            <label><input type="radio" name="sh21" value="B"> B. Lahuta pushon në trá/pse mixha ka vdekë ka mot.</label>
+            <label><input type="radio" name="sh21" value="C"> C. Por kumti i lahutës i trashë, burrnuer/duket se ndihet ke votra përsëri.</label>
+            <label><input type="radio" name="sh21" value="D"> D. Treqind çika nën shatorr in kânë/Njaj mâ t'mirës djali syt s'ia dán.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh22">
+          <p><strong>22. Mbi cilat figura të fjalës krijohen vargjet:
+            <br>“Lahuta pushon në tym 
+            <br>e dorca e saj e thyeme
+            <br>si gishtat e mixhës në vorr”</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh22" value="A"> A. të personifikimit dhe krahasimit.</label>
+            <label><input type="radio" name="sh22" value="B"> B. të alegorisë dhe epitetit.</label>
+            <label><input type="radio" name="sh22" value="C"> C. të hiperbolës dhe metaforës.</label>
+            <label><input type="radio" name="sh22" value="D"> D. të paradoksit dhe oksimoronit.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh23">
+          <p><strong>23. Çfarë rime ka katërvargëshi i poezisë? 
+            <br>“Lahuta pushon në trá
+            <br>pse mixha ka vdekë ka mot
+            <br>e nipat s’ dijnë me i rá
+            <br> Lahuta pushon në tym”</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh23" value="A"> A. ACBB.</label>
+            <label><input type="radio" name="sh23" value="B"> B. ABAC.</label>
+            <label><input type="radio" name="sh23" value="C"> C. ABBC.</label>
+            <label><input type="radio" name="sh23" value="D"> D. ACAA.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh24">
+          <p><strong>24. Kjo poezi është shkruar në variant të ndryshëm nga shqipja standarde. Cilit dialekt a të folme i përket ky fragment?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh24" value="A"> A. Arbërisht.</label>
+            <label><input type="radio" name="sh24" value="B"> B. Arbënisht.</label>
+            <label><input type="radio" name="sh24" value="C"> C. Gegërisht.</label>
+            <label><input type="radio" name="sh24" value="D"> D. Toskërisht.</label>
+          </div>
+        </div>
+        
+        <div class="question" data-subject="shqip" id="sh25">
+          <p><strong>25. Fjala <i>“burrnuer”</i> ka një tipar fonetik dialektor, që në shqipen standarde ka bërë që kjo fjalë të shkruhet <i>“burrëror”</i>. 
+            <br>Çfarë fenomeni i është nënshtruar fjala?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="sh25" value="A"> A. rotacizëm.</label>
+            <label><input type="radio" name="sh25" value="B"> B. palatalizim.</label>
+            <label><input type="radio" name="sh25" value="C"> C. diftongim.</label>
+            <label><input type="radio" name="sh25" value="D"> D. nazalitet.</label>
           </div>
         </div>
 
@@ -571,8 +871,31 @@
     
     // Objekt me përgjigjet e sakta sipas ID-ve të pyetjeve
     const answers = {
-      g1: "A",
-      g2: "D",
+      sh1: "A",
+      sh2: "A",
+      sh3: "A",
+      sh4: "A",
+      sh5: "A",
+      sh6: "A",
+      sh7: "A",
+      sh8: "A",
+      sh9: "A",
+      sh10: "A",
+      sh11: "A",
+      sh12: "A",
+      sh13: "A",
+      sh14: "A",
+      sh15: "A",
+      sh16: "A",
+      sh17: "A",
+      sh18: "A",
+      sh19: "A",
+      sh20: "A",
+      sh21: "A",
+      sh22: "A",
+      sh23: "A",
+      sh24: "A",
+      sh25: "A",
       f1: "C",
       f2: "D",
       b1: "B",
@@ -580,11 +903,11 @@
       i76: "B",
       i77: "C",
       i78: "B",
-      i79: "C",
+      i79: "A",
       i80: "D",
       i81: "C",
       i82: "B",
-      i83: "B",
+      i83: "D",
       i84: "A",
       i85: "C",
       i86: "D",
@@ -594,7 +917,7 @@
       i90: "D",
       i91: "D",
       i92: "A",
-      i93: "C",
+      i93: "D",
       i94: "C",
       i95: "A",
       i96: "C",
