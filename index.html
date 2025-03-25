@@ -1228,6 +1228,10 @@
   </div>
   
   <script>
+    // Fsheh të gjitha pyetjet që nga fillimi
+    document.querySelectorAll('.question, .question-helper').forEach(q => {
+      q.style.display = 'none';
+    });
     // Filtrimi i pyetjeve sipas lëndës së zgjedhur
     document.getElementById('subjectSelect').addEventListener('change', function() {
       const selectedSubject = this.value;
