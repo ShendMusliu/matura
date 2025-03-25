@@ -56,6 +56,14 @@
       border-radius: var(--border-radius);
       transition: background-color var(--transition-speed);
     }
+    .question-helper {
+      background-color: var(--card-bg);
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: var(--border-radius);
+      transition: background-color var(--transition-speed);
+    }
     .question:hover {
       background-color: #fafafa;
     }
@@ -99,7 +107,7 @@
       transition: background-color var(--transition-speed);
     }
     #submitBtn:hover {
-      background-color: #3f7ecb;
+      background-color: #4a90e2;
     }
     #result {
       text-align: center;
@@ -122,6 +130,59 @@
         padding: 10px 20px;
       }
     }
+
+    button {
+    font-family: inherit;
+    font-size: 15px;
+    background: #4a90e2;
+    color: #fff;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+
+  button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+
+  button:hover span {
+    transform: translateX(5em);
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
     
   </style>
 </head>
@@ -142,7 +203,7 @@
     <form id="quizForm">
       <div id="questionsContainer">
         <!-- PYETJET NGA LËNDA "GJUHË SHQIPE DHE LETËRSI" -->
-        <div class="question" data-subject="shqip">
+        <div class="question-helper" data-subject="shqip">
         <p><strong>Lexo tekstin e dhënë më poshtë dhe përgjigju pyetjeve në vijim</strong>
           <br>Për këtë rrëfim tepër të frikshëm, por edhe po kaq të rëndomtë që po hedh në letër, nuk pres, dhe as i lutem njeriu të më
           besojë. Dhe, ç'është e vërteta, do të isha i marrë, po ta shpresoja një gjë të tillë, mbasi edhe logjika më e thjeshtë nuk e
@@ -294,7 +355,7 @@
           </div>
         </div>
         
-        <div class="question" data-subject="shqip">
+        <div class="question-helper" data-subject="shqip">
           <p><strong>Lexo tekstin e dhënë më poshtë dhe përgjigju pyetjeve në vijim</strong>
             <br>Edhe një aksident i rëndë në komunikacion në rrugën Prishtinë-Podujevë
             <br>Një grua vdiq në aksidentin në magjistralen Prishtinë-Podujevë
@@ -361,7 +422,7 @@
           </div>
         </div>
         
-        <div class="question" data-subject="shqip">
+        <div class="question-helper" data-subject="shqip">
           <p><strong>Lexo tekstin e dhënë më poshtë dhe përgjigju pyetjeve në vijim</strong>
             <br>Veprat e tij letrare shtrihen në shumë trajta, forma e gjini letrare. Ai që nga fundi i viteve njëzet nisi të shkruajë kritikë
             letrare sistematike në rubrikën Shënime letrare. Ai krijoi edhe një formë të veçantë të eseut që lidhet me interpretimin e
@@ -405,7 +466,7 @@
           </div>
         </div>
         
-        <div class="question" data-subject="shqip">
+        <div class="question-helper" data-subject="shqip">
           <p><strong>Lexo poezinë e dhënë më poshtë dhe përgjigju pyetjeve në vijim</strong>
             <br>LAHUTA E VJETËR
             <br>
@@ -859,7 +920,7 @@
     // Filtrimi i pyetjeve sipas lëndës së zgjedhur
     document.getElementById('subjectSelect').addEventListener('change', function() {
       const selectedSubject = this.value;
-      const questions = document.querySelectorAll('.question');
+      const questions = document.querySelectorAll('.question, .question-helper');
       questions.forEach(q => {
         if (selectedSubject === 'all' || q.getAttribute('data-subject') === selectedSubject) {
           q.style.display = 'block';
@@ -972,9 +1033,28 @@
   </script>
   <footer style="background-color: #f0f2f5; color: #333; text-align: center; padding: 20px 0; font-size: 0.9em;">
     <div class="footer-content">
-      <p>E ndërtuar nga <strong>Class of 2025</strong></p> <a href="https://kla.education/" target="_blank" style="color: #111; text-decoration: underline;"><strong>Kosovo Leadership Academy</strong></a></p>
+      <p>E ndërtuar nga <strong>Class of 2025</strong> <a href="https://kla.education/" target="_blank" style="color: #111; text-decoration: underline;"><strong>Kosovo Leadership Academy</strong></a></p>
       <p>Testet janë burim nga <a href="https://masht.rks-gov.net/testet-matura-2023/" target="_blank" style="color: #111; text-decoration: underline;"><strong>MASHT</strong></a></p>
       <p>Kjo faqe është ndërtuar me qëllim që t’ju ndihmojë maturanteve të përgatiten për testin e matures.</p>
+      <button onclick="window.location.href='mailto:services@kla.education'">
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                fill="currentColor"
+                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <span>Kontakt</span>
+      </button>
     </div>
   </footer>
 </body>
