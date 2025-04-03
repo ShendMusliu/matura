@@ -207,9 +207,13 @@
       <option value="ekonomi">Ekonomi dhe Ndërmarrësi</option>
       <option value="edqytetare">Edukatë Qytetare</option>
       <option value="his-art">Histori e Artit</option>
-      <option value="muz-har">Teori e Muzikës dhe Harmoni
-      </option>
+      <option value="muz-har">Teori e Muzikës dhe Harmoni</option>
     </select>
+    <!-- Mesazhi që shfaqet kur nuk gjenden pyetje për lëndën e zgjedhur -->
+    <div id="noResults" style="display: none; color: red; font-weight: bold; text-align: center;">
+      Së shpejti do të publikohen pyetjet për këtë lëndë.
+    </div>    
+  </div>  
 
     <form id="quizForm">
       <div id="questionsContainer">
@@ -576,7 +580,7 @@
           </div>
         </div>
 
-        <!-- PYETJET NGA LËNDA "GJUHË SHQIPE DHE LETËRSI" -->
+        <!-- PYETJET NGA LËNDA "GJUHË Angleze" -->
         <div class="question-helper" data-subject="ang">
           <p><strong>I - Read the following text carefully and answer questions 26–30:</strong>
             <br>The Golden Gate Bridge in San Francisco is really orange, not 
@@ -876,53 +880,11 @@
           </div>
         </div>        
 
-        <!-- PYETJET NGA LËNDA "FIZIKË" -->
-        <div class="question" data-subject="fizikë" id="f1">
-          <p><strong>1. Me cilën nga formulat vijuese llogaritet rruga e lëvizjes drejtvizore me nxitim konstant?</strong></p>
-          <div class="options">
-            <label><input type="radio" name="f1" value="A"> A. (Formula A)</label>
-            <label><input type="radio" name="f1" value="B"> B. (Formula B)</label>
-            <label><input type="radio" name="f1" value="C"> C. (Formula C)</label>
-            <label><input type="radio" name="f1" value="D"> D. (Formula D)</label>
-          </div>
-        </div>
-
-        <div class="question" data-subject="fizikë" id="f2">
-          <p><strong>2. Cili nga pohimet është i saktë për ligjin e tretë të Njutonit?</strong></p>
-          <div class="options">
-            <label><input type="radio" name="f2" value="A"> A. Veprimet e dy trupave janë të barabarta dhe me kahe të kundërta</label>
-            <label><input type="radio" name="f2" value="B"> B. Veprimet e dy trupave nuk janë të barabarta dhe me kahe të kundërta</label>
-            <label><input type="radio" name="f2" value="C"> C. Veprimet e dy trupave nuk janë të barabarta dhe me kahe të njëjta</label>
-            <label><input type="radio" name="f2" value="D"> D. Veprimet e dy trupave janë të barabarta dhe me kahe të njëjta</label>
-          </div>
-        </div>
-
-        <!-- PYETJET NGA LËNDA "BIOLOGJI" -->
-        <div class="question" data-subject="biologji" id="b1">
-          <p><strong>1. Si quhet proteina që merr pjesë në ndërtimin e muskujve?</strong></p>
-          <div class="options">
-            <label><input type="radio" name="b1" value="A"> A. Mielina</label>
-            <label><input type="radio" name="b1" value="B"> B. Miozina</label>
-            <label><input type="radio" name="b1" value="C"> C. Elastina</label>
-            <label><input type="radio" name="b1" value="D"> D. Hemoglobina</label>
-          </div>
-        </div>
-
-        <!-- PYETJET NGA LËNDA "KIMI" -->
-        <div class="question" data-subject="kimi" id="k1">
-          <p><strong>1. Gjatë djegies së sulfurit formohen dy okside të sulfurit. Në cilin rast kahja e reaksionit kalon në anën e djathtë?</strong></p>
-          <div class="options">
-            <label><input type="radio" name="k1" value="A"> A. Nëse rritet temperatura e reaksionit</label>
-            <label><input type="radio" name="k1" value="B"> B. Nëse rritet shtypja e gazeve</label>
-            <label><input type="radio" name="k1" value="C"> C. Nëse zvogëlohet sasia e oksigjenit</label>
-            <label><input type="radio" name="k1" value="D"> D. Nëse shtohet katalizatori</label>
-          </div>
-        </div>
-
         <!-- PYETJET NGA LËNDA "INFORMATIKË" -->
         <!-- Pyetja 76 -->
         <div class="question" data-subject="informatikë" id="i76">
           <p><strong>76. Hard Disku ka funksion:</strong></p>
+
           <div class="options">
             <label><input type="radio" name="i76" value="A"> A. Ekzekutimin e sistemit operativ</label>
             <label><input type="radio" name="i76" value="B"> B. Ruajtjen e të dhënave</label>
@@ -1207,18 +1169,286 @@
           </div>
         </div>
 
-        <!-- PYETJET NGA LËNDA "GJEOGRAFI" -->
-        <div class="question" data-subject="gjeografi" id="gj1">
-          <p><strong>[Gjeografi] 1. Në cilën pikë është shpejtësia më e vogël e lëvizjes gjatë rotacionit të Tokës?</strong></p>
+        <!-- PYETJET NGA LËNDA "PSIKOLOGJI" -->
+        <!-- Pyetja 76 -->
+        <div class="question" data-subject="psikologji" id="psiko76">
+          <p><strong>76. Arta ka për detyrë të përshkruaj drejtimin humanist në psikologji. Çka duhet të përmbajë detyra e Artës?</strong></p>
           <div class="options">
-            <label><input type="radio" name="gj1" value="A"> A. Ekuatori</label>
-            <label><input type="radio" name="gj1" value="B"> B. Rrethin tropik</label>
-            <label><input type="radio" name="gj1" value="C"> C. Rrethin polar</label>
-            <label><input type="radio" name="gj1" value="D"> D. Në pole</label>
+            <label><input type="radio" name="psiko76" value="A"> A. Përshkrim se si ky drejtim ka për fokus studimin e përvojës psikologjike të individit në stadin zhvillimor të fëmijërisë</label>
+            <label><input type="radio" name="psiko76" value="B"> B. Përshkrim se si ky drejtim ka për fokus studimin e sjelljes së individit në situata të ndryshme</label>
+            <label><input type="radio" name="psiko76" value="C"> C. Përshkrim se si ky drejtim ka për fokus premisën se qenia njerëzore në thelb është e mirë</label>
+            <label><input type="radio" name="psiko76" value="D"> D. Përshkrim se si ky drejtim ka për fokus premisën se qenia njerëzorë në thelb është jo racionale</label>
           </div>
         </div>
 
-        <!-- Shtoni këtu të gjitha pyetjet nga dokumenti sipas strukturës së mësipërme -->
+        <!-- Pyetja 77 -->
+        <div class="question" data-subject="psikologji" id="psiko77">
+          <p><strong>77. Agoni, një psikolog, po studion marrëdhënien shkakë-pasojë në mes të shkallës së inteligjencës te të rinjtë dhe numrin dhe llojin e librave që ata lexojnë për një gjysmëvjetor akademik. Çfarë metode kërkimorë po përdor Agoni?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko77" value="A"> A. Metodë përshkruese</label>
+            <label><input type="radio" name="psiko77" value="B"> B. Metodë anketimi</label>
+            <label><input type="radio" name="psiko77" value="C"> C. Metodë korreluese</label>
+            <label><input type="radio" name="psiko77" value="D"> D. Metodë eksperimentale</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 78 -->
+        <div class="question" data-subject="psikologji" id="psiko78">
+          <p><strong>78. Iliri para disa ditëve kishte një aksident të rënd në komunikacion. Si rezultat i goditetjes së kokës në timonin e veturës, Iliri ka probleme të mëdha me sistemin pamor, dëgjimor dhe lëvizjen e syve. Cilën pjesë të trurit mund të ketë dëmtuar Iliri?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko78" value="A"> A. Trurin e përparmë</label>
+            <label><input type="radio" name="psiko78" value="B"> B. Trurin e mesëm</label>
+            <label><input type="radio" name="psiko78" value="C"> C. Trurin e prapmë</label>
+            <label><input type="radio" name="psiko78" value="D"> D. Trurin anësor</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 79 -->
+        <div class="question" data-subject="psikologji" id="psiko79">
+          <p><strong>79. Cila e pjesë e SNP-së vepron kur e nxisim lëvizjen tonë dhe në raste urgjente ku, zakonisht, rriten rrahjet e zemrës dhe frymëmarrja?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko79" value="A"> A. Sistemi somatik</label>
+            <label><input type="radio" name="psiko79" value="B"> B. Sistemi autonom</label>
+            <label><input type="radio" name="psiko79" value="C"> C. Sistemi simpatik</label>
+            <label><input type="radio" name="psiko79" value="D"> D. Sistemi parasimpatik</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 80 -->
+        <div class="question" data-subject="psikologji" id="psiko80">
+          <p><strong>80. Artani gjatë tërë kohës ndjehet i lodhur. Pse miku i tij, psikolog, rekomandojë Artanit të bëjë një kontroll të sistemit endokrin?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko80" value="A"> A. Të kontrollojë gjëndrën paratiroide që sekretojnë hormonin PTH sepse mund të ndikojë në lodhje</label>
+            <label><input type="radio" name="psiko80" value="B"> B. Të kontrollojë gjëndrat tiroide, specifikisht tiroksinën sepse mund të ndikojë në lodhje</label>
+            <label><input type="radio" name="psiko80" value="C"> C. Të kontrollojë gjëndrat mbiveshkore sepse mund të ndikojë në lodhje</label>
+            <label><input type="radio" name="psiko80" value="D"> D. Të kontrollojë gjëndrat e hormonit DHEA sepse mund të ndikojë në lodhje</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 81 -->
+        <div class="question" data-subject="psikologji" id="psiko81">
+          <p><strong>81. Cili hormon njihet edhe si "hormoni i stresit" sepse çlirohet gjatë momenteve të alarmit dhe tensionit?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko81" value="A"> A. Adrenalina</label>
+            <label><input type="radio" name="psiko81" value="B"> B. Tiroidet</label>
+            <label><input type="radio" name="psiko81" value="C"> C. Oksitocina</label>
+            <label><input type="radio" name="psiko81" value="D"> D. Katekolaminat</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 82 -->
+        <div class="question" data-subject="psikologji" id="psiko82">
+          <p><strong>82. Tre hapat e mëposhtëm përshkruajnë stadet e zhvillimit njerëzor: 1. Foshnjëria, 2. Prenatal, 3. Fëmijëria e hershme. Radhitni këto periudha duke filluar nga mosha më e re.</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko82" value="A"> A. 1 - 2 - 3</label>
+            <label><input type="radio" name="psiko82" value="B"> B. 2 - 1 - 3</label>
+            <label><input type="radio" name="psiko82" value="C"> C. 3 - 1 - 2</label>
+            <label><input type="radio" name="psiko82" value="D"> D. 3 - 2 - 1</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 83 -->
+        <div class="question" data-subject="psikologji" id="psiko83">
+          <p><strong>83. Besarta është një nënë e re. Ajo gjithashtu sapo është zhvendosur në një shtet të ri. Puna e saj e re, edhe pse me përfitime materiale të mëdha, ka shumë kërkesa dhe obligime për Besartën. Ajo është e mbingarkuar. Pse psikologu i saj ka rekomanduar Besartën që të fillojë të praktikojë meditimin?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko83" value="A"> A. Meditimi mundëson individin që të mendojë thellësisht dhe përqendrohet në zgjedhjen e drejtë të një problemi ose situate, duke lënë anash ngacmuesit e jashtëm dhe jo relevant</label>
+            <label><input type="radio" name="psiko83" value="B"> B. Meditimi mundëson rikujtimin e kujtimeve të shtypura dhe mundëson modifikimin e sjelljes</label>
+            <label><input type="radio" name="psiko83" value="C"> C. Meditimi mundëson humbjen e kontaktit me vetëdijen tonë</label>
+            <label><input type="radio" name="psiko83" value="D"> D. Meditimi mundëson krahasimin e gjendjes së vetëdijes tonë para dhe pas problemit ose situatës sfiduese</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 84 -->
+        <div class="question" data-subject="psikologji" id="psiko84">
+          <p><strong>84. Bora ka për detyrë të shkruajë një ese rreth rëndësisë së gjumit në jetën e njeriut. Duke u bazuar në hulumtimin e saj të literaturës shkencore, Bora beson se ne flemë për të përpunuar informacionin që është fituar gjatë ditës që të bëhemi gati për ditën tjetër. Cila teori mbi gjumin shpjegon se pse flemë sipas përshkrimit të dhënë nga Bora?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko84" value="A"> A. Teoria e riparimit</label>
+            <label><input type="radio" name="psiko84" value="B"> B. Teoria evolucionare</label>
+            <label><input type="radio" name="psiko84" value="C"> C. Teoria e konsolidimit të informacionit</label>
+            <label><input type="radio" name="psiko84" value="D"> D. Teoria e PLSH-së</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 85 -->
+        <div class="question" data-subject="psikologji" id="psiko85">
+          <p><strong>85. Vesa si fëmijë ka filluar të përdorë imazhe ose/dhe simbole mendore për të kuptuar gjërat. Sipas teorisë së zhvillimit mendor të Piazhesë, në cilin stadë ndodhet Vesa?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko85" value="A"> A. Stadi sensimotor</label>
+            <label><input type="radio" name="psiko85" value="B"> B. Stadi paraoperacionale</label>
+            <label><input type="radio" name="psiko85" value="C"> C. Stadi operacional konkret</label>
+            <label><input type="radio" name="psiko85" value="D"> D. Stadi operacional formal</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 86 -->
+        <div class="question" data-subject="psikologji" id="psiko86">
+          <p><strong>86. Lisit, i posalindur, sa herë që familjarët e tij prekin faqet e tij, ai kthen kokën dhe hapë gojën. Pse ndodh kjo me Lisin?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko86" value="A"> A. Familjarët kanë mësuar Lisin të kthejë kokën kur ata prekin faqen e tij</label>
+            <label><input type="radio" name="psiko86" value="B"> B. Për shkak të refleksit Babinski</label>
+            <label><input type="radio" name="psiko86" value="C"> C. Lisi ka vëzhguar dhe mësuar nga vëllai dhe motrat e tij të kthejnë kokën sa herë që preken faqet e tij</label>
+            <label><input type="radio" name="psiko86" value="D"> D. Për shkak të refleksit të kërkimit</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 87 -->
+        <div class="question" data-subject="psikologji" id="psiko87">
+          <p><strong>87. Cili është procesi i të nxënit në të cilin një stimulus i dobët lidhet me një stimulus të fortë, duke prodhuar një reagim të ngjashëm?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko87" value="A"> A. Kushtëzim operant</label>
+            <label><input type="radio" name="psiko87" value="B"> B. Kushtëzim instrumental</label>
+            <label><input type="radio" name="psiko87" value="C"> C. Kushtëzim klasik</label>
+            <label><input type="radio" name="psiko87" value="D"> D. Kushtëzim automatik</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 88 -->
+        <div class="question" data-subject="psikologji" id="psiko88">
+          <p><strong>88. Cila nga pohimet është e saktë për Burimin i cili vuan nga amnezia retrograde?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko88" value="A"> A. Burimi ka humbje të aftësive për të mbajtur mend edhe për të riprodhuar kujtime për ngjarjet e materialet e mësuara para se të shfaqet amnezia</label>
+            <label><input type="radio" name="psiko88" value="B"> B. Burimi ka humbje të aftësive për të mbajtur mend edhe për të riprodhuar të gjithë atë që mëson dhe përjeton pas shfaqjes së amnezisë</label>
+            <label><input type="radio" name="psiko88" value="C"> C. Burimi ka humbje të aftësive për të mbajtur mend që nga fëmijëria</label>
+            <label><input type="radio" name="psiko88" value="D"> D. Burimi ka humbje të aftësive për të riprodhuar kujtime që nga fëmijëria</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 89 -->
+        <div class="question" data-subject="psikologji" id="psiko89">
+          <p><strong>89. Drini ka temperament që ka nxitje dhe frenim të mirë, është i ngrohtë, i qeshur dhe optimist, i këndshëm në shoqëri, komod në punë. Çfarë lloj temperamenti ka Drini?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko89" value="A"> A. Tipi melankolik</label>
+            <label><input type="radio" name="psiko89" value="B"> B. Tipi kolerik</label>
+            <label><input type="radio" name="psiko89" value="C"> C. Tipi flegmatik</label>
+            <label><input type="radio" name="psiko89" value="D"> D. Tipi sanguin</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 90 -->
+        <div class="question" data-subject="psikologji" id="psiko90">
+          <p><strong>90. "Të gjithë burrat janë kuzhinierë të mirë!" Ky pohim është:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko90" value="A"> A. diskriminim</label>
+            <label><input type="radio" name="psiko90" value="B"> B. diskutim</label>
+            <label><input type="radio" name="psiko90" value="C"> C. stereotip</label>
+            <label><input type="radio" name="psiko90" value="D"> D. paragjykim</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 91 -->
+        <div class="question" data-subject="psikologji" id="psiko91">
+          <p><strong>91. Në figurë me numrat 1, 2, 3 dhe 4 janë paraqitur disa pjesë të qelizës nervore. Cilët nga rreshtat në tabelë i përgjigjen saktë funksioneve të një qelize bazuar në figurën e dhënë?</strong></p>
+          <img src="./assets/Psikologji91-1.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <img src="./assets/Psikologji91-2.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <div class="options">
+            <label><input type="radio" name="psiko91" value="A"> A. a</label>
+            <label><input type="radio" name="psiko91" value="B"> B. b</label>
+            <label><input type="radio" name="psiko91" value="C"> C. c</label>
+            <label><input type="radio" name="psiko91" value="D"> D. d</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 92 -->
+        <div class="question" data-subject="psikologji" id="psiko92">
+          <p><strong>92. Në figurën e dhënë me numrat 1, 2, 3 dhe 4 janë paraqitur disa pjesë të trurit të njeriut. Cili numër në figurën e dhënë tregon pjesën e trurit të përparmë, që përbëhet nga një grup i madh aksonesh, që lidh dy hemisferat e trurit?</strong></p>
+          <img src="./assets/Psikologji92.png" style="max-width:100%; height:auto; margin-bottom:10px;">
+          <div class="options">
+            <label><input type="radio" name="psiko92" value="A"> A. 1</label>
+            <label><input type="radio" name="psiko92" value="B"> B. 2</label>
+            <label><input type="radio" name="psiko92" value="C"> C. 3</label>
+            <label><input type="radio" name="psiko92" value="D"> D. 4</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 93 -->
+        <div class="question" data-subject="psikologji" id="psiko93">
+          <p><strong>93. Kur profesori i Psikologjisë po shpjegonte për zgjedhjen e profesioneve, e pyeti Kronin se çka i pëlqente të studionte, Kroni u shpreh që dua të studioj në Departamentin e Psikologjisë dhe të vazhdonte studimet për proceset mendore si perceptimi, të menduarit, kujtesën dhe zgjidhjen e problemeve. Nga kjo bisedë u kuptua se Kroni ishte i orientuar të studionte:</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko93" value="A"> A. psikologjinë shkollore</label>
+            <label><input type="radio" name="psiko93" value="B"> B. psikologjinë organizative</label>
+            <label><input type="radio" name="psiko93" value="C"> C. psikologjinë e njohjes</label>
+            <label><input type="radio" name="psiko93" value="D"> D. psikologjinë e edukimit</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 94 -->
+        <div class="question" data-subject="psikologji" id="psiko94">
+          <p><strong>94. Arti ishte në një vizitë tek Oftalmologu - mjeku i syve. Pas vizitës, mjeku konstatoi se sytë e Artit kishin humbur aftësinë për të lexuar dhe për t'i parë qartë objektet që i kisha afër. Cila është diagnoza e të pamurit tek Arti sipas Oftamologut?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko94" value="A"> A. Presbiopi</label>
+            <label><input type="radio" name="psiko94" value="B"> B. Astigmatizëm</label>
+            <label><input type="radio" name="psiko94" value="C"> C. Miopi</label>
+            <label><input type="radio" name="psiko94" value="D"> D. Hipermetropi</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 95 -->
+        <div class="question" data-subject="psikologji" id="psiko95">
+          <p><strong>95. Bjeshka si foshnje ishte shumë e qeshur, ku edhe më të ëmbël e bënin tingujt që nxirrte nga goja; ku Bjeshka thoshte "jashtë" për të nënkuptuar "dua të dal jashtë", apo fjalën "ujë" për të nënkuptuar "më pihet ujë". Si njihet ky lloj i të folurit tek Bjeshka?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko95" value="A"> A. Të folurit me Belbëzim</label>
+            <label><input type="radio" name="psiko95" value="B"> B. Të folurit Holofrazik</label>
+            <label><input type="radio" name="psiko95" value="C"> C. Të folurit Telegrafik</label>
+            <label><input type="radio" name="psiko95" value="D"> D. Të folurit me Gugatin</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 96 -->
+        <div class="question" data-subject="psikologji" id="psiko96">
+          <p><strong>96. Kapitulli në një tekst shkollor të psikologjisë (Kapitulli 3: 3.1 Kujtesa si proces psikik, 3.2 Faktorët që ndikojnë në kujtesë, 3.3 Llojet dhe çrregullimet e kujtesës, 3.3 Zgjidhja e problemeve). Sipër shihni një pjesë të tabelës së përmbajtjes së një teksti të psikologjisë. Çfarë titulli do të ketë kapitulli 3?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko96" value="A"> A. Biopsikologjia</label>
+            <label><input type="radio" name="psiko96" value="B"> B. Zhvillimi dhe të nxënit</label>
+            <label><input type="radio" name="psiko96" value="C"> C. Normat, të drejtat dhe përgjegjësitë</label>
+            <label><input type="radio" name="psiko96" value="D"> D. Kognitiviteti</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 97 -->
+        <div class="question" data-subject="psikologji" id="psiko97">
+          <p><strong>97. Cili nga drejtimet në vijim, konsiderohet si drejtim i ri në psikologji?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko97" value="A"> A. Drejtimi humanist</label>
+            <label><input type="radio" name="psiko97" value="B"> B. Drejtimi psikoanalist</label>
+            <label><input type="radio" name="psiko97" value="C"> C. Drejtimi geshtalist</label>
+            <label><input type="radio" name="psiko97" value="D"> D. Drejtimi bihejviorist</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 98 -->
+        <div class="question" data-subject="psikologji" id="psiko98">
+          <p><strong>98. Amiri para testit të maturës po mbante ligjërata shtesë për ata nxënës që e kanë zgjedhur lëndën e Psikologjisë. Në këtë ligjëratë, ai po shpjegonte se si disa nxënës janë më të shkathët, më komunikues, më të hapur dhe më të gjallë si tipa, ndërsa disa të tjerë i shpjegoi si më të ngadaltë, fjalëpakë, të mbyllur e të ndrojtur. Cilën teori po e shpjegonte Amiri?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko98" value="A"> A. Teorin e Frojdit</label>
+            <label><input type="radio" name="psiko98" value="B"> B. Teorin e Jungut</label>
+            <label><input type="radio" name="psiko98" value="C"> C. Teorin e Allportit</label>
+            <label><input type="radio" name="psiko98" value="D"> D. Teorin e Adlerit</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 99 -->
+        <div class="question" data-subject="psikologji" id="psiko99">
+          <p><strong>99. Gjatë matjes së inteligjencës, Albina kishte moshën mendore 12 vjeç ndërsa moshën kronologjike 15 vjeç. Sa është inteligjenca e Albinës?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko99" value="A"> A. 135</label>
+            <label><input type="radio" name="psiko99" value="B"> B. 125</label>
+            <label><input type="radio" name="psiko99" value="C"> C. 105</label>
+            <label><input type="radio" name="psiko99" value="D"> D. 80</label>
+          </div>
+        </div>
+
+        <!-- Pyetja 100 -->
+        <div class="question" data-subject="psikologji" id="psiko100">
+          <p><strong>100. Dy ditë para testit të maturës Kroni dhe Mentori diskutonin për dy llojet e mendimeve. Kroni thoshte se kemi raste kur nisemi me e zgjidh një problem dhe përfundojmë me një zgjidhje të vetme të saktë, ndërsa Mentori thoshte që një problem mund të ketë shumë zgjidhje të ndryshme. Për cilën qasje diskutonin Kroni dhe Mentori?</strong></p>
+          <div class="options">
+            <label><input type="radio" name="psiko100" value="A"> A. Qasja e përshkruese</label>
+            <label><input type="radio" name="psiko100" value="B"> B. Qasja psikodinamike</label>
+            <label><input type="radio" name="psiko100" value="C"> C. Qasja e studimit të rastit</label>
+            <label><input type="radio" name="psiko100" value="D"> D. Qasja kognitive</label>
+          </div>
+        </div>
+
+
       </div>
 
       <button type="button" id="submitBtn">Dërgo Testin</button>
@@ -1236,13 +1466,25 @@
     document.getElementById('subjectSelect').addEventListener('change', function() {
       const selectedSubject = this.value;
       const questions = document.querySelectorAll('.question, .question-helper');
+      let visibleCount = 0;
+      
+      // Filtrimi i pyetjeve
       questions.forEach(q => {
         if (selectedSubject === 'all' || q.getAttribute('data-subject') === selectedSubject) {
           q.style.display = 'block';
+          visibleCount++;
         } else {
           q.style.display = 'none';
         }
       });
+      
+      // Kontrollo nëse ka pyetje të dukshme
+      const noResultsMessage = document.getElementById('noResults');
+      if (visibleCount === 0) {
+        noResultsMessage.style.display = 'block';
+      } else {
+        noResultsMessage.style.display = 'none';
+      }
     });
     
     // Objekt me përgjigjet e sakta sipas ID-ve të pyetjeve
@@ -1297,10 +1539,6 @@
       ang48: "A",
       ang49: "A",
       ang50: "A",
-      f1: "C",
-      f2: "D",
-      b1: "B",
-      k1: "D",
       i76: "B",
       i77: "C",
       i78: "B",
@@ -1326,7 +1564,32 @@
       i98: "D",
       i99: "B",
       i100: "A",
-      gj1: "D"
+      psiko76: "C",
+      psiko77: "C",
+      psiko78: "C",
+      psiko79: "C",
+      psiko80: "B",
+      psiko81: "A",
+      psiko82: "B",
+      psiko83: "A",
+      psiko84: "C",
+      psiko85: "B",
+      psiko86: "D",
+      psiko87: "C",
+      psiko88: "A",
+      psiko89: "D",
+      psiko90: "C",
+      psiko91: "C",
+      psiko92: "C",
+      psiko93: "C",
+      psiko94: "A",
+      psiko95: "B",
+      psiko96: "D",
+      psiko97: "A",
+      psiko98: "B",
+      psiko99: "D",
+      psiko100: "D",
+
       // Shtoni këtu përgjigjet për të gjitha pyetjet nga dokumenti.
     };
     
