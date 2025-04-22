@@ -4,190 +4,189 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Platforma Testimi - Matura 2023</title>
-  <!-- Importo fontin modern Roboto nga Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #4a90e2;
-      --success-color: #2ecc71;
-      --error-color: #e74c3c;
-      --bg-color: #f0f2f5;
-      --card-bg: #fff;
-      --text-color: #333;
-      --border-radius: 8px;
-      --transition-speed: 0.3s;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      padding: 20px;
-      padding-bottom: 100px;
-    }
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: var(--card-bg);
-      border-radius: var(--border-radius);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    #subjectSelect {
-      display: block;
-      margin: 20px auto;
-      padding: 10px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: var(--border-radius);
-      background-color: #fff;
-    }
-    .question {
-      max-width: 1400px;
-      background-color: var(--card-bg);
-      border: 1px solid #ddd;
-      padding: 20px;
-      margin: 15px auto;
-      border-radius: var(--border-radius);
-      transition: background-color var(--transition-speed);
-    }
-    .question-helper {
-      max-width: 1400px;
-      background-color: var(--card-bg);
-      border: 1px solid #ddd;
-      padding: 20px;
-      margin: 15px auto;
-      border-radius: var(--border-radius);
-      transition: background-color var(--transition-speed);
-    }
-    .question:hover {
-      background-color: #fafafa;
-    }
-    .options label {
-      display: block;
-      margin-bottom: 10px;
-      cursor: pointer;
-      padding: 5px;
-      border-radius: var(--border-radius);
-      transition: background-color var(--transition-speed);
-    }
-    .options label:hover {
-      background-color: #f0f0f0;
-    }
-    .correct {
-      border-left: 5px solid var(--success-color);
-      background-color: #eafaf1;
-    }
-    .wrong {
-      border-left: 5px solid var(--error-color);
-      background-color: #fdecea;
-    }
-    .highlight-correct {
-      color: var(--success-color);
-      font-weight: bold;
-    }
-    .highlight-wrong {
-      color: var(--error-color);
-      font-weight: bold;
-    }
-    #submitBtn {
-      display: block;
-      margin: 30px auto;
-      padding: 12px 30px;
-      font-size: 1em;
-      background-color: var(--primary-color);
-      color: #fff;
-      border: none;
-      border-radius: var(--border-radius);
-      cursor: pointer;
-      transition: background-color var(--transition-speed);
-    }
-    #submitBtn:hover {
-      background-color: #4a90e2;
-    }
-    #result {
-      text-align: center;
-      font-size: 1.2em;
-      margin-top: 20px;
-      padding: 15px;
-      border: 2px solid #ddd;
-      background-color: #fff;
-      border-radius: var(--border-radius);
-      display: none;
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 10px;
-      }
-      .question {
-        padding: 15px;
-      }
-      #submitBtn {
-        padding: 10px 20px;
-      }
-    }
-
-    button {
-    font-family: inherit;
-    font-size: 15px;
-    background: #4a90e2;
-    color: #fff;
-    padding: 0.7em 1em;
-    padding-left: 0.9em;
-    display: flex;
-    align-items: center;
-    border: none;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.2s;
-    cursor: pointer;
-  }
-
-  button span {
-    display: block;
-    margin-left: 0.3em;
-    transition: all 0.3s ease-in-out;
-  }
-
-  button svg {
-    display: block;
-    transform-origin: center center;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  button:hover .svg-wrapper {
-    animation: fly-1 0.6s ease-in-out infinite alternate;
-  }
-
-  button:hover svg {
-    transform: translateX(1.2em) rotate(45deg) scale(1.1);
-  }
-
-  button:hover span {
-    transform: translateX(5em);
-  }
-
-  button:active {
-    transform: scale(0.95);
-  }
-
-  @keyframes fly-1 {
-    from {
-      transform: translateY(0.1em);
-    }
-    to {
-      transform: translateY(-0.1em);
-    }
-  }
-    
-  </style>
+/* === variables dhe bazë === */
+:root {
+  --primary-color: #4a90e2;
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  --bg-color: #f0f2f5;
+  --card-bg: #fff;
+  --text-color: #333;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px 20px 100px;
+  position: relative;
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+h1, h2 { text-align: center; margin-bottom: 20px; }
+#subjectSelect {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  background-color: #fff;
+}
+.question,
+.question-helper {
+  max-width: 1400px;
+  background-color: var(--card-bg);
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 15px auto;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed);
+}
+.question:hover { background-color: #fafafa; }
+.options label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed);
+}
+.options label:hover { background-color: #f0f0f0; }
+.correct { border-left: 5px solid var(--success-color); background-color: #eafaf1; }
+.wrong { border-left: 5px solid var(--error-color); background-color: #fdecea; }
+.highlight-correct { color: var(--success-color); font-weight: bold; }
+.highlight-wrong { color: var(--error-color); font-weight: bold; }
+#submitBtn {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 30px;
+  font-size: 1em;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+#submitBtn:hover { background-color: #357ABD; }
+#result {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 20px;
+  padding: 15px;
+  border: 2px solid #ddd;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  display: none;
+}
+@media (max-width: 600px) {
+  .container { padding: 10px; }
+  .question { padding: 15px; }
+  #submitBtn { padding: 10px 20px; }
+}
+/* === modal overlay & form === */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal {
+  background: #fff;
+  padding: 1.5em;
+  border-radius: var(--border-radius);
+  max-width: 400px;
+  width: 90%;
+}
+.modal h2 { margin-top: 0; text-align: center; }
+.modal label { display: block; margin: 0.8em 0; font-size: 0.9em; }
+.modal input, .modal select, .modal textarea {
+  width: 100%;
+  padding: 0.6em;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 0.9em;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5em;
+  margin-top: 1em;
+}
+.btn-submit {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+.btn-submit:hover { background-color: #357ABD; }
+.btn-cancel {
+  background: #ddd;
+  border: none;
+  padding: 0.6em 1em;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+/* === fancy report button === */
+.fancy-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 2em 0.8em 1em;
+  font-size: 15px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+.fancy-btn:active { transform: scale(0.95); }
+.fancy-btn .fancy-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #357ABD 100%);
+  border-radius: inherit;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 1;
+}
+.fancy-btn .icon-wrap,
+.fancy-btn .label {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+}
+.fancy-btn .icon-wrap { margin-right: 0.6em; transition: transform 0.4s ease; }
+.fancy-btn .icon-wrap svg { width: 30px; height: 30px; }
+.fancy-btn .label { white-space: nowrap; transition: transform 0.4s ease; }
+.fancy-btn:hover .fancy-bg {
+  transform: scale(1.2) rotate(-2deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.fancy-btn:hover .icon-wrap { transform: translateX(4px) rotate(10deg); }
+.fancy-btn:hover .label { transform: translateX(6px); }
+</style>
 </head>
 <body>
   <div class="container">
@@ -2210,37 +2209,122 @@
         resultEl.innerHTML += ' Duhet të provoni përsëri për një rezultat më të mirë.';
       }
     });
+    // Gjej butonët dhe modal-in
+    const openBtn  = document.getElementById('open-report');
+    const closeBtn = document.getElementById('close-report');
+    const modal    = document.getElementById('report-modal');
+
+    // Hap modal-in
+    openBtn.addEventListener('click', () => {
+     modal.style.display = 'flex';
+    });
+
+    // Mbyll modal-in
+    closeBtn.addEventListener('click', () => {
+     modal.style.display = 'none';
+    });
+    // Mbyll edhe me klik jashtë dritares
+    modal.addEventListener('click', e => {
+     if (e.target === modal) modal.style.display = 'none';
+    });
+
   </script>
 </body>
-<footer style="background-color: #f0f2f5; color: #333; text-align: center; padding: 15px 0; font-size: 0.8em; position: fixed; bottom: 0; left: 0; width: 100%;">
-  <div class="footer-content" style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
-    <button onclick="window.location.href='mailto:services@kla.education'" style="padding: 10px 20px; border: none; cursor: pointer;">
-      <div class="svg-wrapper-1">
-        <div class="svg-wrapper">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
-            <path fill="none" d="M0 0h24v24H0z"></path>
-            <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
-          </svg>
-        </div>
+<footer style="background:var(--bg-color); padding:15px 0; position:fixed; bottom:0; left:0; width:100%;">
+  <div style="display:flex; justify-content:center; align-items:center; gap:15px; flex-wrap:wrap;">
+    <button type="button" id="openReportBtn" class="fancy-btn">
+      <span class="fancy-bg"></span>
+      <div class="icon-wrap">
+        <!-- SVG nga material.io -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <g><rect fill="none" height="24" width="24"/></g>
+          <g><g>
+            <path d="M22,20.59l-4.69-4.69C18.37,14.55,19,12.85,19,11c0-4.42-3.58-8-8-8-4.08,0-7.44,3.05-7.93,7h2.02C5.57,7.17,8.03,5,11,5c3.31,0,6,2.69,6,6s-2.69,6-6,6c-2.42,0-4.5-1.44-5.45-3.5H3.4C4.45,16.69,7.46,19,11,19c1.85,0,3.55-0.63,4.9-1.69L20.59,22L22,20.59z"/>
+            <polygon points="8.43,9.69 9.65,15 11.29,15 12.55,11.22 13.5,13.5 15.5,13.5 15.5,12 14.5,12 13.25,9 11.71,9 10.59,12.37 9.35,7 7.7,7 6.45,11 1,11 1,12.5 7.55,12.5"/>
+          </g></g>
+        </svg>
       </div>
-      <span>Raporto gabimet</span>
+      <span class="label">Raporto gabimet</span>
     </button>
-    <div class="footer-text">
-      <p>
-        E ndërtuar nga <strong></strong> 
-        <a href="https://kla.education/" target="_blank" style="color: #111; text-decoration: underline;">
-          <strong>Kosovo Leadership Academy.</strong>
-        </a> 
-        -- Testet janë burim nga 
-        <a href="https://masht.rks-gov.net/testet-matura-2023/" target="_blank" style="color: #111; text-decoration: underline;">
-          <strong>MASHT</strong>
-        </a>
-      </p>
-      <p>
-        Kjo faqe është ndërtuar me qëllim që t’ju ndihmojë maturanteve të përgatiten për testin e matures.
-      </p>
+    <div>
+      Ndërtuar nga nxënësit e klasave 2027 &ndash; 2028 | <a href="https://kla.education" target="_blank">KLA</a>
     </div>
   </div>
 </footer>
 
+<div id="reportModal" class="modal-overlay">
+  <div class="modal">
+    <h2>Raporto Gabimin</h2>
+    <form
+  id="reportForm"
+  action="https://formspree.io/f/xanoyygr"
+  method="POST"
+>
+  <!-- e‑maili i përdoruesit -->
+  <label>
+    Email juaj:
+    <input type="email" name="Email" required placeholder="shembull@domain.com"/>
+  </label>
+
+  <!-- fusha tjera -->
+  <label>
+    Lënda / Tema:
+    <input type="text" name="Lenda" required placeholder="P.sh. Matematike"/>
+  </label>
+  <label>
+    Pyetja (#):
+    <input type="number" name="Pyetja" min="1" required/>
+  </label>
+  <label>
+    Lloji i gabimit:
+    <select name="TipiGabimit" required>
+      <option value="">— Zgjidh —</option>
+      <option value="Shenim">Shënim</option>
+      <option value="Numerim">Numërim</option>
+      <option value="Tekst">Tekst</option>
+      <option value="Tjeter">Tjetër</option>
+    </select>
+  </label>
+  <label>
+    Komenti:
+    <textarea name="Koment" rows="4" placeholder="Përshkrimi…"></textarea>
+  </label>
+
+  <!-- opsionale: e‑maili yt në subject -->
+  <input type="hidden" name="_subject" value="Raport Gabimi nga Platforma Testimi">
+
+  <!-- butonat -->
+  <div class="buttons">
+    <button type="submit" class="btn-submit">Dërgo</button>
+    <button type="button" id="closeReportBtn" class="btn-cancel">Anulo</button>
+  </div>
+</form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Filtrimi pyetjesh
+    const subjectSelect = document.getElementById('subjectSelect');
+    const questions = document.querySelectorAll('.question, .question-helper');
+    subjectSelect.addEventListener('change', function() {
+      let visible = 0;
+      questions.forEach(q => {
+        if (q.dataset.subject === this.value) {
+          q.style.display = 'block'; visible++;
+        } else q.style.display = 'none';
+      });
+      document.getElementById('noResults').style.display = visible ? 'none':'block';
+    });
+    // Përgjigjet e sakta etj... (ruani objektin answers dhe funksionin Submit)
+    // Modal raporte
+    const openBtn = document.getElementById('openReportBtn');
+    const closeBtn = document.getElementById('closeReportBtn');
+    const modal = document.getElementById('reportModal');
+    openBtn.addEventListener('click', ()=> modal.style.display='flex');
+    closeBtn.addEventListener('click', ()=> modal.style.display='none');
+    modal.addEventListener('click', e=> { if (e.target===modal) modal.style.display='none'; });
+  });
+</script>
+</body>
 </html>
